@@ -7,13 +7,13 @@ public class Personagem : MonoBehaviour
     [ SerializeField ]
     private string nome;
     [ SerializeField ]
+    private int energia;
+    [ SerializeField ]
     private int forca_ataque;
     [ SerializeField ]
-    private float forca_do_pulo;
-    [ SerializeField ]
     private float velocidade;
-    [ SerializeField ]
-   
+    
+  
 
     public void AtribuirNome(string nome)
     {
@@ -24,7 +24,17 @@ public class Personagem : MonoBehaviour
     {
         return this.nome;
     }
-    
+
+    public void AtribuirEnergia(int energia)
+    {
+        this.energia = energia;
+    }
+
+    public int Energia()
+    {
+        return this.energia;
+    }
+
     public void AtribuirForca_Ataque(int forca_ataque)
     {
         this.forca_ataque = forca_ataque;
@@ -35,15 +45,7 @@ public class Personagem : MonoBehaviour
         return this.forca_ataque;
     }
 
-    public void AtribuirForca_do_pulo(float forca_do_pulo)
-    {
-        this.forca_do_pulo = forca_do_pulo;
-    }
-
-    public float Forca_do_pulo()
-    {
-        return this.forca_do_pulo;
-    }
+    
 
 
     public void AtribuirVelocidade(float velocidade)
@@ -57,10 +59,6 @@ public class Personagem : MonoBehaviour
     }
 
    
-    }
-
-
-
 
 
     void Start()
@@ -71,3 +69,6 @@ public class Personagem : MonoBehaviour
     {
         
     }
+}
+
+

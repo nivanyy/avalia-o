@@ -1,14 +1,50 @@
 using UnityEngine;
 
-public class guerreiro : MonoBehaviour
+public class lobsomem : Personagem
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public enum ArmaDoLobsomem
+    {
+        GARRAS, FURIADALUA
+    }
+
+    private ArmaDoLobsomem armaDoLobsomem;
+
+    public void AtribuirArma(ArmaDoLobsomem arma)
+    {
+        this.armaDoLobsomem = arma;
+    }
+
+    public ArmaDoLobsomem Arma()
+    {
+        return this.armaDoLobsomem;
+    }
+
+
+    public int DanoDoInimigo()
+    {
+        int dano = 0;
+
+        switch (armaDoLobsomem)
+        {
+            case ArmaDoLobsomem.GARRAS:
+                dano = Forca_Ataque() + 10;
+                break;
+            case ArmaDoLobsomem.FURIADALUA:
+                dano = Forca_Ataque() + 18;
+                break;
+          
+        }
+        
+        // dano do ataque com a arma
+        
+        return dano;
+    }
+    
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         
