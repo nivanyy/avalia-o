@@ -44,7 +44,6 @@ public class Personagem : MonoBehaviour
     {
         return this.forca_ataque;
     }
-
     
 
 
@@ -58,7 +57,14 @@ public class Personagem : MonoBehaviour
         return this.velocidade;
     }
 
-   
+    public bool CompareVelocidade(Personagem personagem)
+    {
+        if (this.velocidade > personagem.Velocidade())
+        {
+            return true;
+        }
+        return false;
+    }
 
 
     void Start()

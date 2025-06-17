@@ -38,6 +38,12 @@ public class lobsomem : Personagem
         // dano do ataque com a arma
         
         return dano;
+        
+        
+        
+        
+        
+        
     }
     
 
