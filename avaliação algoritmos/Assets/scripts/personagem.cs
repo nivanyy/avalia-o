@@ -9,7 +9,7 @@ public class Personagem : MonoBehaviour
     [ SerializeField ]
     private int energia;
     [ SerializeField ]
-    private int forca_ataque;
+    private int ataque;
     [ SerializeField ]
     private float velocidade;
     
@@ -35,14 +35,14 @@ public class Personagem : MonoBehaviour
         return this.energia;
     }
 
-    public void AtribuirForca_Ataque(int forca_ataque)
+    public void AtribuirAtaque(int ataque)
     {
-        this.forca_ataque = forca_ataque;
+        this.ataque = ataque;
     }
 
     public int Forca_Ataque()
     {
-        return this.forca_ataque;
+        return this.ataque;
     }
     
 
@@ -57,15 +57,7 @@ public class Personagem : MonoBehaviour
         return this.velocidade;
     }
 
-    public bool CompareVelocidade(Personagem personagem)
-    {
-        if (this.velocidade > personagem.Velocidade())
-        {
-            return true;
-        }
-        return false;
-    }
-
+   
 
     void Start()
     {

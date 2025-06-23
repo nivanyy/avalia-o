@@ -1,36 +1,31 @@
 using UnityEngine;
 
-public class Teste : MonoBehaviour
+public class teste : MonoBehaviour
 {
-    Personagem Jota = new Personagem();
-    lobsomem sopro = new lobsomem();
-
     void Start()
     {
-        Jota.AtribuirNome("Jota");
-        Jota.AtribuirEnergia(10);
-        Jota.AtribuirForca_Ataque(12);
         
-        Jota.AtribuirVelocidade(8);
+        lobsomem lobsomem = new GameObject("Lobsomem").AddComponent<lobsomem>();
+        lobsomem.AtribuirNome("sopro");
+        lobsomem.AtribuirAtaque(20);
+        lobsomem.AtribuirArma(lobsomem.ArmaDoLobsomem.GARRAS);
 
-        sopro.AtribuirNome("sopro");
-        sopro.AtribuirEnergia(12);
-        sopro.AtribuirForca_Ataque(15);
-        sopro.AtribuirVelocidade(10);
-        sopro.AtribuirArma(lobsomem.ArmaDoLobsomem.GARRAS);
-       sopro.AtribuirArma(lobsomem.ArmaDoLobsomem.FURIADALUA);
-
-        if (Jota.Energia() <= 0)
-        {
-            Debug.Log("O " + Jota.Nome() + " ficou sem energia");
-
-        }
-        else
-        {
-            Debug.Log("O " + Jota.Nome() + " aonde tem "+ Jota.Energia() + "energia");
-        }
         
+        Personagem Personagem = new GameObject("personagem").AddComponent<Personagem>();
+        Personagem.AtribuirNome("sol");
+        Personagem.AtribuirEnergia(80);
+        Personagem.AtribuirAtaque(10);
+        Personagem.AtribuirVelocidade(3);
 
+      
+        Debug.Log("--- Combate Iniciado ---");
+        Debug.Log( lobsomem.Nome() + " (Lobsomem) VS " + Personagem.Nome());
+        Debug.Log("Lobsomem ataca com: " +  lobsomem.Arma());
+        Debug.Log("Dano causado: " +  lobsomem.Arma());
+        Debug.Log( lobsomem + " recebeu " + " de dano. Vida restante: " + 100);
+
+        
+        Personagem.AtribuirEnergia( lobsomem.DanoDoInimigo());
     }
 
     void Update()
